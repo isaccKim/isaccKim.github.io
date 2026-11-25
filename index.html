@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261125">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261125c">
   <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
   <script>
     // Apply saved theme before paint to avoid a flash.
@@ -397,15 +397,21 @@
 
     <div class="run reveal">
       <div class="run-intro">
-        <p class="run-lead"><b>I love running</b> — especially through wide-open scenery. For me, a long run is a kind of moving meditation: one breath, one step, one view at a time. It quiets my mind and brings me back to research with a clear head.</p>
+        <p class="run-lead"><button class="snap-link" type="button" data-snap="nature" data-src="assets/img/run/nature.webp" data-pos="50% 55%" data-caption="Out in the mountains." data-alt="Seokwon standing on a rock in front of snow-capped mountains" aria-expanded="false" aria-controls="snap">I love nature and running.<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m21 15-4.5-4.5L8 19"/></svg></button> My favorite routes go through wide-open scenery — for me, a long run is a kind of moving meditation: one breath, one step, one view at a time. It quiets my mind and brings me back to research with a clear head.</p>
         <p class="run-lead secondary">Since 2021 that's added up to about 68 marathons' worth — and I've turned the hobby into two running apps for my campus community.</p>
         <div class="places">
-          <p class="places-label">Ran abroad in</p>
+          <p class="places-label">Ran abroad in <span>· tap to see the photo</span></p>
           <ul class="place-list">
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Shanghai, China</li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tbilisi, Georgia</li>
-            <li><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Denver, USA</li>
+            <li><button class="place" type="button" data-snap="shanghai" data-src="assets/img/run/shanghai.webp" data-pos="50% 35%" data-caption="Shanghai, China — at the former site of the Provisional Government of the Republic of Korea." data-alt="Running selfie in Shanghai" aria-expanded="false" aria-controls="snap"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Shanghai, China</button></li>
+            <li><button class="place" type="button" data-snap="tbilisi" data-src="assets/img/run/tbilisi.webp" data-pos="35% 50%" data-caption="Morning run through the old streets of Tbilisi, Georgia." data-alt="Running down a street in Tbilisi" aria-expanded="false" aria-controls="snap"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tbilisi, Georgia</button></li>
+            <li><button class="place" type="button" data-snap="denver" data-src="assets/img/run/denver.webp" data-pos="50% 30%" data-caption="Denver, USA." data-alt="Running selfie in Denver" aria-expanded="false" aria-controls="snap"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Denver, USA</button></li>
           </ul>
+          <div class="snap" id="snap" aria-live="polite">
+            <div class="snap-inner">
+              <button class="snap-photo" type="button" aria-label="Open photo"><img alt=""></button>
+              <p class="snap-cap"></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="run-body">
@@ -451,6 +457,6 @@
   <p class="lb-caption"></p>
 </dialog>
 
-<script src="assets/js/main.js?v=20261125"></script>
+<script src="assets/js/main.js?v=20261125c"></script>
 </body>
 </html>
