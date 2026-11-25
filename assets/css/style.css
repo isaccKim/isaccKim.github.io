@@ -306,6 +306,10 @@ h2::after {
 .timeline > li:last-child::after { display: none; }
 .timeline time { font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
 .timeline h4 { font-size: 16.5px; font-weight: 700; margin-top: 2px; }
+.org-link { color: inherit; }
+.org-link span { color: var(--faint); font-weight: 500; font-size: .85em; transition: color .15s; }
+.org-link:hover { color: var(--accent); text-decoration: none; }
+.org-link:hover span { color: var(--accent); }
 .timeline .role { margin: 2px 0 0; color: var(--accent); font-weight: 550; font-size: 14.5px; }
 .timeline p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
 .timeline ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
