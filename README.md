@@ -18,3 +18,8 @@ assets/img/pub/*.webp   # paper main figures (thumbnails + lightbox)
 2. In `index.html`, copy one `<article class="pub">` block inside `.pubs` and edit it.
    `data-tags="3d"` or `data-tags="med"` controls the filter tabs.
 3. Add a line to **News**.
+
+## Cache busting
+
+`index.html` loads `style.css?v=…` and `main.js?v=…`. When you change the CSS or JS,
+bump that `v=` value (e.g. to today's date) so browsers don't mix a cached old file with new HTML.
