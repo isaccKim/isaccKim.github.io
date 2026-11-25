@@ -73,6 +73,27 @@
     btn.remove();
   }));
 
+  /* ---------- Running distance count-up ---------- */
+  const counter = document.querySelector('.count');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (counter && !reduce && 'IntersectionObserver' in window) {
+    const target = +counter.dataset.target;
+    const fmt = n => n.toLocaleString('en-US');
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now(), dur = 1400;
+      const step = now => {
+        const k = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(1 - k, 3);
+        counter.textContent = fmt(Math.round(target * eased));
+        if (k < 1) requestAnimationFrame(step);
+      };
+      counter.textContent = '0';
+      requestAnimationFrame(step);
+    }, { threshold: 0.6 });
+    io.observe(counter);
+  }
+
   /* ---------- Figure lightbox ---------- */
   const lb = document.getElementById('lightbox');
   const lbImg = lb.querySelector('img');
