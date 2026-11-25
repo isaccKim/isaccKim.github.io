@@ -101,7 +101,7 @@
   /* ---------- Running photos: toggle by city ---------- */
   const snap = document.getElementById('snap');
   if (snap) {
-    const sImg = snap.querySelector('img'), sCap = snap.querySelector('.snap-cap'), sBtn = snap.querySelector('.snap-photo');
+    const sImg = snap.querySelector('img'), sCap = snap.querySelector('.snap-cap');
     const triggers = [...document.querySelectorAll('[data-snap]')];
     let current = null;
     triggers.forEach(t => t.addEventListener('click', () => {
@@ -115,7 +115,6 @@
         if (sImg.complete && sImg.naturalWidth) sImg.classList.remove('loading');
         sImg.style.objectPosition = t.dataset.pos || '50% 50%';
         sCap.textContent = t.dataset.caption || '';
-        sBtn.dataset.full = t.dataset.src; sBtn.dataset.caption = t.dataset.caption || '';
         snap.classList.add('open'); current = key;
       }
       triggers.forEach(x => x.setAttribute('aria-expanded', String(x.dataset.snap === current)));
@@ -126,8 +125,7 @@
   const lb = document.getElementById('lightbox');
   const lbImg = lb.querySelector('img');
   const lbCap = lb.querySelector('.lb-caption');
-  document.querySelectorAll('.pub-fig, .snap-photo').forEach(fig => fig.addEventListener('click', () => {
-    lb.classList.toggle('is-photo', fig.classList.contains('snap-photo'));
+  document.querySelectorAll('.pub-fig').forEach(fig => fig.addEventListener('click', () => {
     lbImg.src = fig.dataset.full;
     lbImg.alt = fig.querySelector('img').alt;
     lbCap.textContent = fig.dataset.caption || '';
