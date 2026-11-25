@@ -354,6 +354,17 @@ h2::after {
 .run-caption { margin: 10px 0 0; font-family: var(--mono); font-size: 12px; color: var(--faint); }
 
 .run-lead { margin: 0 0 22px; font-size: 17px; color: var(--muted); max-width: 58ch; }
+.run-lead:has(+ .run-lead) { margin-bottom: 10px; }
+.run-lead.secondary { font-size: 15.5px; color: var(--faint); }
+.places { margin-top: 28px; }
+.places-label { margin: 0 0 10px; font-size: 12px; font-weight: 700; color: var(--faint); text-transform: uppercase; letter-spacing: .08em; }
+.place-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.place-list li {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13.5px; font-weight: 550; color: var(--text);
+  background: var(--surface); border: 1px solid var(--line); padding: 5px 12px 5px 10px; border-radius: 999px;
+}
+.place-list svg { color: var(--accent); flex: none; }
 .run-lead b { color: var(--text); font-weight: 650; }
 .apps { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .apps li { border-bottom: 1px solid var(--line); }
