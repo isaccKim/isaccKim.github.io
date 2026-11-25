@@ -73,25 +73,34 @@
     btn.remove();
   }));
 
-  /* ---------- Running distance count-up ---------- */
-  const counter = document.querySelector('.count');
+  /* ---------- Running: marathon ticks + count-up ---------- */
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (counter && !reduce && 'IntersectionObserver' in window) {
-    const target = +counter.dataset.target;
-    const fmt = n => n.toLocaleString('en-US');
+  const ticks = document.querySelector('.ticks');
+  const counter = document.querySelector('.count');
+  if (ticks) {
+    const ratio = (+ticks.dataset.km || 0) / 42.195;
+    const full = Math.floor(ratio), n = full + (ratio - full > 0.05 ? 1 : 0);
+    ticks.innerHTML = Array.from({ length: n }, (_, i) =>
+      `<i class="${(i + 1) % 10 === 0 ? 'major' : ''}${i === full ? ' part' : ''}" style="--i:${i}"></i>`).join('');
+  }
+  if (!reduce && 'IntersectionObserver' in window && (ticks || counter)) {
+    if (ticks) ticks.classList.add('anim');
+    const target = counter ? +counter.dataset.target : 0;
     const io = new IntersectionObserver(([e]) => {
       if (!e.isIntersecting) return;
       io.disconnect();
+      if (ticks) requestAnimationFrame(() => ticks.classList.add('go'));
+      if (!counter) return;
       const t0 = performance.now(), dur = 1400;
       const step = now => {
         const k = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(1 - k, 3);
-        counter.textContent = fmt(Math.round(target * eased));
+        counter.textContent = Math.round(target * eased).toLocaleString('en-US');
         if (k < 1) requestAnimationFrame(step);
       };
       counter.textContent = '0';
       requestAnimationFrame(step);
-    }, { threshold: 0.6 });
-    io.observe(counter);
+    }, { threshold: 0.5 });
+    io.observe(document.querySelector('.run-stat') || counter);
   }
 
   /* ---------- Figure lightbox ---------- */

@@ -370,34 +370,40 @@
     <div class="section-head reveal">
       <h2>Outside the Lab</h2>
     </div>
-    <div class="run-card reveal">
+    <div class="run reveal">
       <div class="run-stat">
-        <!-- Update the total here when it grows -->
+        <!-- When the total grows, update data-target, the number, and data-km below -->
         <p class="run-num"><span class="count" data-target="2900">2,900</span><span class="unit">km</span></p>
-        <p class="run-since">run since 2021</p>
+        <div class="ticks" data-km="2900" aria-hidden="true"></div>
+        <p class="run-caption">run since 2021 · one tick = one marathon</p>
       </div>
-      <div class="run-text">
-        <p><b>I love running.</b> That's roughly 69 full marathons' worth of distance so far.</p>
-        <p>I've also turned the hobby into code — two running apps for my campus community, below.</p>
+      <div class="run-body">
+        <p class="run-lead"><b>I love running.</b> I've logged my runs since 2021 — about 69 marathons' worth so far — and turned the hobby into two running apps for my campus community.</p>
+        <ul class="apps">
+          <li>
+            <a class="app" href="https://github.com/isaccKim/HRC_Project" target="_blank" rel="noopener">
+              <span class="app-icon" aria-hidden="true">H</span>
+              <span class="app-main">
+                <span class="app-top"><b>HRC</b><span class="app-year">2022</span></span>
+                <span class="app-desc">Running app for Handong students, built with the CRA club — GPS tracking, run logs and rankings.</span>
+                <span class="stack">Flutter · Firebase</span>
+              </span>
+              <span class="app-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="app" href="https://github.com/isaccKim/KRC" target="_blank" rel="noopener">
+              <span class="app-icon alt" aria-hidden="true">K</span>
+              <span class="app-main">
+                <span class="app-top"><b>KRC</b><span class="app-year">2024</span><span class="badge">Excellence Award · Handong SW Festival</span></span>
+                <span class="app-desc">Kuyper Running Club — GPS tracking on Google Maps, run dashboards and RC-vs-RC rankings.</span>
+                <span class="stack">Flutter · Firebase · Google Maps · Rive</span>
+              </span>
+              <span class="app-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ul>
       </div>
-      <svg class="run-route" viewBox="0 0 200 100" aria-hidden="true">
-        <path d="M10 78 C 34 20, 58 92, 86 52 S 128 8, 150 40 S 178 86, 190 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="0.1 9"/>
-        <circle cx="10" cy="78" r="5.5" fill="var(--surface)" stroke="currentColor" stroke-width="3"/>
-        <circle cx="190" cy="24" r="6.5" fill="currentColor"/>
-      </svg>
-    </div>
-
-    <div class="apps reveal">
-      <a class="app" href="https://github.com/isaccKim/HRC_Project" target="_blank" rel="noopener">
-        <div class="app-head"><span class="app-name">HRC</span><span class="app-year">2022</span></div>
-        <p class="app-desc">A running app for Handong University students, built with the CRA club. GPS tracking, personal run logs, and rankings by distance, time and affiliation.</p>
-        <div class="app-foot"><span class="stack">Flutter · Firebase</span><span class="gh">GitHub ↗</span></div>
-      </a>
-      <a class="app" href="https://github.com/isaccKim/KRC" target="_blank" rel="noopener">
-        <div class="app-head"><span class="app-name">KRC</span><span class="badge">Excellence Award · Handong SW Festival</span><span class="app-year">2024</span></div>
-        <p class="app-desc">Kuyper Running Club — a running app for Kuyper residential-college members. GPS tracking on Google Maps, run dashboards, and RC-vs-RC rankings.</p>
-        <div class="app-foot"><span class="stack">Flutter · Firebase · Google Maps · Rive</span><span class="gh">GitHub ↗</span></div>
-      </a>
     </div>
   </section>
 </main>
